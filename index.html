@@ -1,0 +1,395 @@
+<html>
+<head>
+  <style>
+
+      @font-face { font-family: Untitled;
+                   src: url(assets/untitled.ttf);
+      }
+
+      body { background-color: black;
+             margin:20px;
+
+      }
+
+
+      h1, p {font-family: Untitled;
+          margin: 0px;
+          font-weight: normal;
+          letter-spacing: -1px;
+          font-family: Untitled;
+          font-size: 3vw;
+          color: white;
+          text-transform: uppercase;
+          line-height: 3vw;
+      }
+
+      .wrapper {display: grid;
+                grid-template-columns: 450px 2fr 1fr;
+                height: 100%;
+                width: 100%;
+      }
+      .module { width: 100%;
+                grid-column: 2/3;
+                overflow: hidden;
+                display: grid;
+                margin-right: 50px;
+
+              }
+
+      #rule { grid-row: 1/2;
+              grid-column:1/2;
+              height: 457.5px;
+              /* position: absolute; */
+              /* min-height: 100px; */
+              max-height: 100%;
+              width: 400px;
+            }
+
+      #man {  grid-row: 1/2;
+              grid-column:1/2;
+              height: 457.5px;
+
+              /* position: absolute; */
+              /* min-height: 100px; */
+              max-height: 100%;
+      }
+
+
+      .info{  grid-column: 1/2;
+              display: grid;
+              grid-template-rows: 1fr 1fr;
+              overflow-y: scroll;
+              padding-right: 10px;
+              width:400px;
+
+
+      }
+
+
+      #edit:focus{
+          outline:none;
+      }
+
+      #edit	span {
+      position: absolute;
+      display: inline;
+      width: 1px;
+      height:3vw;
+      background-color: gray;
+
+      animation-name: blink;
+      animation-duration: 800ms;
+      animation-iteration-count:  infinite;
+      opacity: 1;
+      }
+
+      #edit:focus span {
+          display:none;
+      }
+
+
+
+      @keyframes blink {
+      from { opacity: 1; }
+      to { opacity: 0; }
+      }
+
+
+      .your_height { grid-row: 2/3;
+
+      }
+
+      #height_num3 { position: absolute;
+                    top: -15px;
+                    left: 405px;
+                    color: white;
+
+      }
+
+
+      #height_num { position: absolute;
+                    top: 50px;
+                    left: 204px;
+                    color: white;
+
+      }
+
+      #height_num4 { position: absolute;
+                    top: 155px;
+                    left: 405px;
+                    color: white;
+
+      }
+
+      #height_num2 { position: absolute;
+                     top: 210px;
+                     left: 405px;
+                     color: white;
+
+      }
+
+      #height_num5 { position:  absolute;
+                    top: 265px;
+                    left: 405px;
+                    color: white;
+
+      }
+
+      #height_num6 { position:  absolute;
+                    top: 330px;
+                    left: 405px;
+                    color: white;
+
+      }
+
+      #height_num7 { position:  absolute;
+                    top: 370px;
+                    left: 405px;
+                    color: white;
+
+      }
+
+      #unite { display: inline;
+               float: left;
+               margin-right: 100%;
+      }
+
+      #carpenter { display: inline;
+                   float: left;
+                   margin-right: 100%;
+
+      }
+
+      #tourette { display: inline;
+                   float: left;
+                   margin-right: 100%;
+      }
+
+
+
+      .slider { width: 70%;
+                height: 15px;
+                border-radius: 5px;
+                margin-top: 20px;
+              }
+
+    .slider input { width: 200px;
+            }
+      .panel {  display: inline;
+                grid-column:3/4;
+                grid-row: 1/2;
+                left: 0px;
+                width: 100%;
+                overflow: scroll;
+                float: left;
+      }
+      video { margin-top: 0px;
+              /* margin-right: 10px; */
+      }
+
+      .secondary { color: grey;
+
+
+      }
+
+      .label { font-size: 12pt;
+               font-family: Untitled;
+               letter-spacing: normal;
+
+
+      }
+      .more { position: fixed;
+              bottom: 20px;
+              left: 20px;
+              font-family: Untitled;
+              font-size: 3vw;
+              color: grey;
+              cursor:  pointer;
+              width: 400px;
+              background-color: black;
+
+      }
+
+      .ruler { display: grid;
+              position: relative;
+              margin: 0px;
+
+      }
+
+
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class='wrapper'>
+
+
+
+        <div class='info'>
+            <div class='title'>
+              <h1> The Modulor</h1>
+              <h1 id="edit" class="secondary" contenteditable="true">Man <span></span> </h1>
+            </div>
+
+            <div class='your_height'>
+              <p>Height <br><span id="input_height" class="secondary">183CM</span></p>
+              <div class="slider">
+                    <input type="range" min="50" max="300" value="183" id="myRange">
+                </div>
+            </div>
+
+            <div class='more'> <span>?</span></div>
+
+
+        </div>
+
+        <div class='module'>
+
+          <div class="ruler">
+            <img id='man' src= "assets/man.svg" > </img>
+
+          <svg xmlns="http://www.w3.org/2000/svg" id='rule' preserveAspectRatio="none" viewBox="0 0 511.37 914.56"><defs><style>.cls-1{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><title>rule_3_1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
+            <rect id='one' class="cls-1" x="1" y="1" width="509.37" height="912.56"/>
+            <line class="cls-1" x1="303.49" y1="1" x2="303.49" y2="913.56"/>
+            <line class="cls-1" x1="409.62" y1="1" x2="409.62" y2="913.56"/>
+            <line class="cls-1" x1="1.06" y1="457.28" x2="510.37" y2="457.28"/>
+            <line class="cls-1" x1="1" y1="171.78" x2="409.62" y2="171.78"/>
+            <line class="cls-1" x1="409.62" y1="350.43" x2="510.37" y2="350.43"/>
+            <line class="cls-1" x1="409.62" y1="567.53" x2="510.37" y2="567.53"/>
+            <line class="cls-1" x1="409.62" y1="699.96" x2="510.37" y2="699.96"/>
+            <line class="cls-1" x1="303.49" y1="635.24" x2="409.62" y2="635.24"/>
+            <line class="cls-1" x1="303.49" y1="742.79" x2="409.62" y2="742.79"/>
+            <line class="cls-1" x1="303.49" y1="813.19" x2="409.62" y2="813.19"/>
+            <line class="cls-1" x1="303.49" y1="850.34" x2="409.62" y2="850.34"/>
+            <line class="cls-1" x1="303.49" y1="877.32" x2="409.62" y2="877.32"/>
+            <line class="cls-1" x1="303.49" y1="892.1" x2="409.62" y2="892.1"/>
+            <line class="cls-1" x1="303.49" y1="901.73" x2="409.62" y2="901.73"/>
+            <line class="cls-1" x1="303.49" y1="907.69" x2="409.62" y2="907.69"/>
+            <line class="cls-1" x1="409.62" y1="784.63" x2="510.37" y2="784.63"/>
+            <line class="cls-1" x1="409.62" y1="832.4" x2="510.37" y2="832.4"/>
+            <line class="cls-1" x1="409.62" y1="869.29" x2="510.37" y2="869.29"/>
+            <line class="cls-1" x1="409.62" y1="886.38" x2="510.37" y2="886.38"/>
+            <line class="cls-1" x1="409.62" y1="897.58" x2="510.37" y2="897.58"/>
+            <line class="cls-1" x1="409.62" y1="905.57" x2="510.37" y2="905.57"/>
+            <line class="cls-1" x1="409.62" y1="910.48" x2="510.37" y2="910.48"/>
+            <path class="cls-1" d="M409.62,171.78c-49-47.2-49-123.58,0-170.78"/>
+            <path class="cls-1" d="M409.62,1c49,47.2,49,123.58,0,170.78"/>
+            <path class="cls-1" d="M409.62,350.43a127,127,0,0,1,0-178.65"/>
+            <path class="cls-1" d="M409.62,171.78a127,127,0,0,1,0,178.65"/>
+            <path class="cls-1" d="M409.62,457.28a75.93,75.93,0,0,1,0-106.85"/>
+            <path class="cls-1" d="M409.62,350.43a76,76,0,0,1,0,106.85"/>
+            <path class="cls-1" d="M409.62,567.53a78.35,78.35,0,0,1,0-110.25"/>
+            <path class="cls-1" d="M409.62,457.28a78.37,78.37,0,0,1,0,110.25"/>
+            <path class="cls-1" d="M409.62,635.24a48.13,48.13,0,0,1,0-67.71"/>
+            <path class="cls-1" d="M409.62,567.53a48.13,48.13,0,0,1,0,67.71"/>
+            <path class="cls-1" d="M409.62,700a46,46,0,0,1,0-64.72"/>
+            <path class="cls-1" d="M409.62,635.24a46,46,0,0,1,0,64.72"/>
+            <path class="cls-1" d="M409.62,742.79a30.44,30.44,0,0,1,0-42.83"/>
+            <path class="cls-1" d="M409.62,700a30.44,30.44,0,0,1,0,42.83"/>
+            <path class="cls-1" d="M409.62,813.19a20.3,20.3,0,0,1,0-28.56"/>
+            <path class="cls-1" d="M409.62,784.63a20.3,20.3,0,0,1,0,28.56"/>
+            <path class="cls-1" d="M409.62,832.4a13.65,13.65,0,0,1,0-19.23"/>
+            <path class="cls-1" d="M409.62,813.17a13.67,13.67,0,0,1,0,19.23"/>
+            <path class="cls-1" d="M409.62,850.86a13.65,13.65,0,0,1,0-19.23"/>
+            <path class="cls-1" d="M409.62,831.63a13.67,13.67,0,0,1,0,19.23"/>
+            <path class="cls-1" d="M409.62,869a13.65,13.65,0,0,1,0-19.23"/>
+            <path class="cls-1" d="M409.62,849.78a13.67,13.67,0,0,1,0,19.23"/>
+            <path class="cls-1" d="M409.62,877.32a6.82,6.82,0,0,1,0-9.61"/>
+            <path class="cls-1" d="M409.62,867.71a6.84,6.84,0,0,1,0,9.61"/>
+            <path class="cls-1" d="M409.62,885.5a6.82,6.82,0,0,1,0-9.61"/>
+            <path class="cls-1" d="M409.62,875.89a6.84,6.84,0,0,1,0,9.61"/>
+            <path class="cls-1" d="M409.62,785.61a30.43,30.43,0,0,1,0-42.82"/>
+            <path class="cls-1" d="M409.62,742.79a30.43,30.43,0,0,1,0,42.82"/>
+          </g></g></svg>
+
+                              <p id="height_num"  class='label'>183</p>
+                              <p id="height_num2" class='label'>113</p>
+                              <p id="height_num3" class='label'>226</p>
+                              <p id="height_num4" class='label'>139</p>
+                              <p id="height_num5" class='label'>86</p>
+                              <p id="height_num6" class='label'>53</p>
+                              <p id="height_num7" class='label'>33</p>
+
+
+
+           </div>
+
+        </div>
+
+
+      <div class="panel">
+        <p> TODAY </p>
+        <p id="date" class="secondary"> </p>
+
+        <video id="carpenter" height="176">
+          <source src="assets/carpenter.mp4" type="video/mp4">
+        </video> <br>
+        <p>CCVA</p>
+        <p class='secondary'>Cambridge, Massachusetts </p>
+
+        <p  class='secondary' id="carpenter_time"></p>
+
+
+                <video id="unite" height="176">
+                  <source src="assets/unite.mp4" type="video/mp4">
+                </video>
+                <p>Unité d'habitation </p>
+                <p class='secondary'> Marseille, France </p>
+                <p class='secondary' id="unite_time"></p>
+
+
+                <video id="tourette" height="176">
+                  <source src="assets/tourette.mp4" type="video/mp4">
+                </video>
+                <p>la tourette </p>
+                <p class='secondary'>Lyon, France </p>
+                <p  class='secondary' id="tourette_time"></p>
+
+
+      </div>
+
+    </div>
+</div>
+
+
+</body>
+<script src="controls.js"></script>
+<script>
+
+
+var open = false;
+
+$( ".more" ).hover(function() {
+  $( this ).find("span").css("color", "white");
+}, function() {
+  $( this ).find("span").css("color", "grey");
+});
+
+  $( ".more" ).click(function() {
+    open = !open;
+
+    if(open) {
+
+          var htmlString = ("was an anthropometric scale of proportions created by the architect Le Corbusier, in an attempt create 'harmonious' measurements that were based on the human scale. Le Corbusier’s modular was based on the height of a 183cm man because 'in English detective novels, the good-looking men, such as policemen, are always six feet tall!' The modular has been applied to many of Le Corbusier’s buildings, including the Unité d'Habitation à in Marseille, France, and government buildings and housing in Chandigarh, India.")
+
+          $( "title, #edit" ).text(htmlString).attr("contenteditable", "false");
+          $(".your_height").css("display", "none");
+    } else {
+      $( "title, #edit" ).text("man").attr("contenteditable", "true");
+      $(".your_height").css("display", "block");
+
+    }
+
+  }
+  );
+
+
+
+</script>
+</html>
